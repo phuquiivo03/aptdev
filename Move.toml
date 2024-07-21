@@ -1,0 +1,24 @@
+[package]
+name = "tutorial"
+version = "1.0.0"
+authors = []
+
+[addresses]
+aptdev="0x314226e75d0c4de626f177f66d056ef8511b24404e9bf05c909b925bd36b8e48"
+
+[dev-addresses]
+aptdev="0x314226e75d0c4de626f177f66d056ef8511b24404e9bf05c909b925bd36b8e48"
+[dependencies.AptosFramework]
+git = "https://github.com/aptos-labs/aptos-core.git"
+rev = "mainnet"
+subdir = "aptos-move/framework/aptos-framework" 
+
+[dependencies.AptosTokenObjects]
+git = "https://github.com/aptos-labs/aptos-core.git"
+rev = "mainnet"
+subdir = "aptos-move/framework/aptos-token-objects"
+
+
+
+
+[dev-dependencies]
