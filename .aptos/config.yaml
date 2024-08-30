@@ -1,23 +1,23 @@
 ---
 profiles:
-  aptdev:
+  demo:
+    network: Testnet
+    private_key: "0x0e848d700f2cbfff0a04c62b9d54101fb8023370e0cb88737268b92f838fc418"
+    public_key: "0x76cddc49984c818e3b332136de372307e7cad05a28056b26558c166e77a200dc"
+    account: a0cf9a74556188c0078e1e1f4250621710bae0de0f51b208c9ba38eb9338f494
+    rest_url: "https://fullnode.testnet.aptoslabs.com"
+    faucet_url: "https://faucet.testnet.aptoslabs.com"
+  quit:
     network: Devnet
-    private_key: "0xd95f73ff78c5f747b16c6bd4ef5e7a6a99d92f19fabb4535d1073d3bcd50cce3"
-    public_key: "0x42371feaed412416097bf0ca066fd8816b9f99d066a9b1afa3cb85dc90f01608"
-    account: 314226e75d0c4de626f177f66d056ef8511b24404e9bf05c909b925bd36b8e48
-    rest_url: "https://fullnode.devnet.aptoslabs.com"
-    faucet_url: "https://faucet.devnet.aptoslabs.com"
-  default:
-    network: Devnet
-    private_key: "0x6796377ffd92cc9a71e61d08a1525a7d39b36031149603d14c87b627da91675a"
-    public_key: "0x3e6e14e8edc33f1df4d35da0b294effa123ea30cb55a3863bd41e7ce51278ea4"
-    account: 2fb84bbf8d736ca1ca907f5575d17e669bc8eb0087aadd5c9ffc43a49cba797f
+    private_key: "0xa1c18942e4ae2339f26b15ae60c9d0849509dc74ca515a05a789d1e071559c8c"
+    public_key: "0xc6c1d4bb9bc87fe96b7742bcb8ba1b0ceee8d41be84a4bb4cea3b2b40eefe9f9"
+    account: 24edd17b15e2727c8d1d4fda4afaf601bb9752af38afbe39c35f31c9a3627c00
     rest_url: "https://fullnode.devnet.aptoslabs.com"
     faucet_url: "https://faucet.devnet.aptoslabs.com"
   quitos:
     network: Devnet
-    private_key: "0xf4ba1ab630d20819cf77334c6864a506f4b0739127b4dcc513c71005ad81d20d"
-    public_key: "0xeee5a9f8142cc340921116e85832747899659d9af95f134705e64ca1554bc985"
-    account: 2ee23fd61a731534abb4e01f9d306fc4bd1bfca05e994759478cb9855360fa04
+    private_key: "0x66703befe6fdd6e492d47d78a9e75f867bf8518fcec49de596694d83e6f940fa"
+    public_key: "0x0708a9b6fb879d7a22fd36b995ec3903355881fac680759cbcae5ca8e40bcde0"
+    account: 89f02b4c31deebdbb46fa154a18e3e18363d932f48bde324715d924c3e3967b0
     rest_url: "https://fullnode.devnet.aptoslabs.com"
     faucet_url: "https://faucet.devnet.aptoslabs.com"

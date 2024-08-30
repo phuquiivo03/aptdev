@@ -1,9 +1,9 @@
-module apt::lrn {
+module apt::lrn_s {
     use std::signer;
     use std::string::{String, utf8};
     use std::vector;
     use aptos_framework::event;
-    use aptos_framework::object::{Self, Object};
+    use aptos_framework::object::{Self, Object, transfer};
     use aptos_token_objects::token;
     use aptos_token_objects::collection;
     use std::option::{Self, Option}; 
@@ -12,6 +12,7 @@ module apt::lrn {
     const OBJECT_NOT_FOUND: u64 = 1;
     const UPDATE_DNA_FAILED: u64 = 2;
     const EMPTY_INVENTORY: u64 = 3;
+    const NOT_AN_OWNER: u64 = 4;
 
     const OBJECT_NAME: vector<u8> = b"GlobalChar";
 
@@ -57,13 +58,13 @@ module apt::lrn {
             move_to(state_object_signer, new_char);
     }
 
-    fun mint(
-        name: String,
-        age: u64,
-        description: String,
-        uri: String,
-        skin_value: u64
-    ) : GlobalChar {
+        fun mint(
+            name: String,
+            age: u64,
+            description: String,
+            uri: String,
+            skin_value: u64
+        ) : GlobalChar {
 
         let new_char = GlobalChar {
             name,
@@ -77,6 +78,9 @@ module apt::lrn {
     }
 
     public entry fun update_char_skin_dna(s: &signer, new_dna: u64) acquires GlobalChar {
+        // let obj_add = state_address_object();
+        // let obj = object::address_to_object<GlobalChar>(obj_add);
+        // assert!(object::is_owner(obj, signer::address_of(s)), NOT_AN_OWNER);
         let char = borrow_global_mut<GlobalChar>(signer::address_of(s));
         char.skin_value = new_dna;
     }
@@ -94,16 +98,16 @@ module apt::lrn {
         true
     }
 
-    // #[view]
-    // public fun state_address_object(): address {
-    //     object::create_object_address(@apt, OBJECT_NAME)
-    // }
+    #[view]
+    public fun state_address_object(): address {
+        object::create_object_address(&@apt, OBJECT_NAME)
+    }
 
-    // #[view]
-    // public fun get_char(): Object<GlobalChar> {
-    //     object::address_to_object(state_address_object())
+    #[view]
+    public fun get_char(): Object<GlobalChar> {
+        object::address_to_object(state_address_object())
 
-    // }
+    }
 
     #[test(a = @0x1)]
     public fun test_add_asset_into_inventory(a: &signer) acquires GlobalChar {
@@ -120,6 +124,5 @@ module apt::lrn {
         // update_char_skin_dna(a, 1234);
         // // let inventory =  &borrow_global<CharsCollection>(signer::address_of(a)).inventory;
         // // let rs = make_sure_non_empty_Charscollection(inventory);
-
     }
 }
