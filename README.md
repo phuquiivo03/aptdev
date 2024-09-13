@@ -1,4 +1,4 @@
-# Project Name
+# Meme Throwing
 This project is a Move-based smart contract application designed to work with the Aptos blockchain. It includes modules for creating collections, minting tokens, and transferring tokens. The project structure is organized to facilitate development, testing, and deployment of Move modules.
 
 ## Project Structure
